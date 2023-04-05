@@ -1,8 +1,6 @@
 name: Create Comic Book Release
 on:
   workflow_dispatch:
-    inputs:
-      - 'Test'
 
 jobs:
   build:
