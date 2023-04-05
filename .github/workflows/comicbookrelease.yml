@@ -1,7 +1,9 @@
 name: Create Comic Book Release
 on:
   workflow_dispatch:
-  
+    inputs:
+      - 'Test'
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -21,3 +23,5 @@ jobs:
         artifacts: 'ComicbookVFX.zip'
         body: 'Comic Book VFX for NeverwinterNights'
         token: ${{ secrets.GITHUB_TOKEN }}
+        tag: v1.0.${{ github.run_number }}
+
