@@ -6,7 +6,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    -	name: Comic Book Release
+    -	name: 'Comic Book Release'
       uses: thedoctor0/zip-release@0.7.1
       with:
         path: 'ComicbookVFX'
@@ -14,7 +14,7 @@ jobs:
         filename: 'ComicbookVFX.zip'
         exclusions: '*.git* /*node_modules/* .editorconfig *.yml'  
 
-    - name: Upload Release
+    - name: 'Upload Release'
       uses: ncipollo/release-action@v1.12.0
       with:
         artifacts: "release.zip"
