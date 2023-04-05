@@ -1,20 +1,21 @@
 name: Create Comic Book Release
 on:
   workflow_dispatch:
+  
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-      name: Comic Book Release
-    - uses: thedoctor0/zip-release@0.7.1
+    -	name: Comic Book Release
+      uses: thedoctor0/zip-release@0.7.1
       with:
         path: 'ComicbookVFX'
         type: 'zip'
         filename: 'ComicbookVFX.zip'
         exclusions: '*.git* /*node_modules/* .editorconfig *.yml'  
+
     - name: Upload Release
       uses: ncipollo/release-action@v1.12.0
       with:
-       artifacts: "release.zip"
-       token: ${{ secrets.GITHUB_TOKEN }}
+        artifacts: "release.zip"
+        token: ${{ secrets.GITHUB_TOKEN }}
