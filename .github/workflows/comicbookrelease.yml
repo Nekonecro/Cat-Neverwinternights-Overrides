@@ -6,6 +6,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@master
     -	name: Pack for Release
       uses: thedoctor0/zip-release@0.7.1
       with:
